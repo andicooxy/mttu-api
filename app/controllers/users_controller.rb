@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class UsersController < AuthsController
   def create
     render json: User.create!(data_params)
   end
@@ -28,6 +28,6 @@ class UsersController < ApplicationController
   end
 
   def data_params
-    params.require(:data).permit(:title, :performer, :cost)
+    params.require(:data).permit(:full_name, :password, :department_id, :region_id, :user_type_id)
   end
 end

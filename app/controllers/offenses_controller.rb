@@ -1,4 +1,4 @@
-class OffensesController < ApplicationController
+class OffensesController < AuthsController
   before_action :set_offense, only: [:show, :update, :destroy]
 
   # GET /offenses
@@ -48,6 +48,6 @@ class OffensesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def offense_params
-      params.fetch(:offense, {})
+      params.fetch(:offense, {}).permit(:name, :description)
     end
 end
