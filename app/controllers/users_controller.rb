@@ -1,6 +1,10 @@
 class UsersController < AuthsController
   def create
-    render json: User.create!(data_params)
+    begin
+      render json: User.create!(data_params)
+    rescue => exception
+      render json: exception, status: :unprocessable_entity
+    end
   end
   
   def show
@@ -13,14 +17,22 @@ class UsersController < AuthsController
     render json: summary(users)
   end
   
-  def update
-    existing_User.update!(data_params)
-    render json: existing_User    
+  def update 
+    begin
+        existing_user.update!(data_params)
+        render json: existing_user   
+    rescue => exception
+        render json: exception, status: :unprocessable_entity
+    end 
   end
   
-  def destroy
-    existing_User.destroy!
-    head :no_content
+  def destroy    
+    begin
+        existing_user.destroy!
+        head :no_content 
+    rescue => exception
+        render json: exception, status: :unprocessable_entity
+    end 
   end
   
   protected
@@ -33,11 +45,11 @@ class UsersController < AuthsController
         } 
     end
   
-  def existing_User
-    User.find(params['id'])
+  def existing_user
+    User.find_by(id: params['id'])
   end
 
   def data_params
-    params.require(:data).permit(:full_name, :password, :department_id, :region_id, :user_type_id)
+    params.require(:user).permit(:full_name, :password, :department_id, :region_id, :user_type_id)
   end
 end
