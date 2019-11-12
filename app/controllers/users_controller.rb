@@ -8,7 +8,9 @@ class UsersController < AuthsController
   end
 
   def index 
-    render json: User.all
+    users = User.order('created_at ASC') 
+                .paginate(per_page: params[:limit] || 30 , page: params[:page] || 1)                                                        
+    render json: summary(users)
   end
   
   def update
@@ -22,6 +24,14 @@ class UsersController < AuthsController
   end
   
   protected
+    def summary(data)           
+        {current_page:  data.current_page,
+         current_page_total:  data.length,
+         total_pages:  data.total_pages,
+         total_filtered:  data.total_entries,
+         uses: data.map{|k| k.cerialize_users_collection}  
+        } 
+    end
   
   def existing_User
     User.find(params['id'])

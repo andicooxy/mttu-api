@@ -4,21 +4,13 @@ module UserSerializer
   extend ActiveSupport::Concern
 
   included do
-    def self.cerialize_business_collection(business)
-    end
-
-    def self.cerialize_collection 
-      select(:has_reset_password, 
-              :active,
-              :email,
-              :client_code,
-              :first_name,
-              :last_password_reset_date,
-              :last_name,
-              :full_name,
-              :active,
-              :verified,       
-              :blocked)
+    def cerialize_users_collection
+        {email: email,
+         full_name: full_name,
+         last_name: last_name,
+         first_name: first_name,
+         region: region.slice(:name,:id),
+         department: department.slice(:id, :name)}
     end
 
     def cerialize_for_login
@@ -27,8 +19,7 @@ module UserSerializer
                    :first_name,
                    :last_password_reset_date,
                    :last_name,
-                   :full_name,
-         
+                   :full_name,         
                    :verified,
                    :blocked)
     end
