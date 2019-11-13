@@ -52,3 +52,5 @@ gem 'figaro'
 
 # Work on csv files
 gem 'smarter_csv'
+
+gem 'rack-cors'
