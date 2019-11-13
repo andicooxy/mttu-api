@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :departments , only: [:index] 
   resources :users 
 
-  get 'profile/login', to: 'user_login#login'
+  get 'profile/login', to: 'generals#login'
+  get 'v1/reports', to: 'generals#reports'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
