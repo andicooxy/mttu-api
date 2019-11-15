@@ -9,6 +9,8 @@ module UserSerializer
          full_name: full_name,
          last_name: last_name,
          first_name: first_name,
+         address: address,
+         registered_no: registered_no,
          designation: designation,
          city_town: city_town,
          region: region.slice(:name,:id),
@@ -22,6 +24,8 @@ module UserSerializer
                    :last_name,
                    :designation,
                    :city_town,
+                   :registered_no,
+                   :address,
                    :full_name,         
                    :verified,
                    :blocked)
@@ -35,7 +39,9 @@ module UserSerializer
             :blocked,
             :is_active,
             :last_name,
+            :address,
             :city_town,
+            :registered_no,
             :email,
             :full_name     
             )

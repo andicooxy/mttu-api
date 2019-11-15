@@ -1,7 +1,8 @@
 class UsersController < AuthsController
   def create
     begin
-      render json: User.create!(data_params)
+      user = User.create!(data_params)
+      render json: user.cerialize
     rescue => exception
       render json: exception, status: :unprocessable_entity
     end
@@ -50,6 +51,8 @@ class UsersController < AuthsController
   end
 
   def data_params
-    params.require(:user).permit(:full_name, :city_town, :password, :department_id,:designation, :region_id)
+    params.require(:user).permit(:full_name,:city_town,:email,:password, 
+                                 :registration_number,:address,:phone_number,
+                                 :department_id,:designation,:region_id)
   end
 end
