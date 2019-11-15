@@ -31,6 +31,9 @@ module UserSerializer
                    :full_name,         
                    :verified,
                    :blocked)
+      data[:offense_count] = Offense.count
+      data[:users_count] = User.count
+      data 
     end
 
     def cerialize
