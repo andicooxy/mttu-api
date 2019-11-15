@@ -4,6 +4,9 @@ class OffendersController < AuthsController
       offender = Offender.new(data_params)
       offender.user_id = params[:user_id]
       offender.save!
+      if params[:offender]["offender_ids"].present?
+        offender.offense_ids << params[:offender]["offender_ids"]
+      end
       render json:  offender.cerialize
     rescue => exception
       render json: exception, status: :unprocessable_entity
@@ -65,7 +68,7 @@ class OffendersController < AuthsController
                                      :vehicle_type,:date_of_issue,
                                      :address,:city_town,:number_of_poeple,
                                      :phone_number,:ambolance_needed,:injured_people,
-                                     :offense_ids,:toll_track_needed,:email,:offense_ids,
+                                     :offense_ids,:toll_track_needed,:email,
                                      :driver_liences_no,:statement)
   end
 end
