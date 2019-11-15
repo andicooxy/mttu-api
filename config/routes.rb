@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :offenders
   resources :offenses
   resources :regions , only: [:index] 
   resources :departments , only: [:index] 

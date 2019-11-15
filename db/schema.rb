@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_15_140404) do
+ActiveRecord::Schema.define(version: 2019_11_15_190734) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,27 @@ ActiveRecord::Schema.define(version: 2019_11_15_140404) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "offenders", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "full_name", null: false
+    t.string "vehicle_no", null: false
+    t.string "statement"
+    t.string "offenses_ids"
+    t.string "driver_liences_no"
+    t.string "email"
+    t.string "vehicle_type"
+    t.datetime "date_of_issue"
+    t.string "city_town"
+    t.string "address"
+    t.string "number_of_poeple"
+    t.string "phone_number", null: false
+    t.boolean "ambolance_needed", default: false
+    t.boolean "injured_people", default: false
+    t.boolean "toll_track_needed", default: false
+    t.index ["phone_number"], name: "index_offenders_on_phone_number"
   end
 
   create_table "offenses", force: :cascade do |t|
