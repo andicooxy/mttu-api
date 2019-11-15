@@ -10,6 +10,7 @@ module UserSerializer
          last_name: last_name,
          first_name: first_name,
          address: address,
+         id: id,
          registered_no: registered_no,
          designation: designation,
          city_town: city_town,
@@ -24,6 +25,7 @@ module UserSerializer
                    :last_name,
                    :designation,
                    :city_town,
+                   :id,
                    :registered_no,
                    :address,
                    :full_name,         
@@ -32,7 +34,7 @@ module UserSerializer
     end
 
     def cerialize
-      slice(
+      slice(:email,
             :verified,
             :created_at,
             :designation,
@@ -41,6 +43,7 @@ module UserSerializer
             :last_name,
             :address,
             :city_town,
+            :id,
             :registered_no,
             :email,
             :full_name     

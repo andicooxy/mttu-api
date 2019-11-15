@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(version: 2019_11_15_140404) do
     t.datetime "updated_at", null: false
     t.string "designation"
     t.string "address"
-    t.string "registration_number"
+    t.string "registered_no"
     t.index ["department_id"], name: "index_users_on_department_id"
     t.index ["email"], name: "index_users_on_email"
     t.index ["region_id"], name: "index_users_on_region_id"
