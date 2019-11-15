@@ -9,6 +9,7 @@ module UserSerializer
          full_name: full_name,
          last_name: last_name,
          first_name: first_name,
+         designation: designation,
          region: region.slice(:name,:id),
          department: department.slice(:id, :name)}
     end
@@ -18,6 +19,7 @@ module UserSerializer
                    :first_name,
                    :last_password_reset_date,
                    :last_name,
+                   :designation,
                    :full_name,         
                    :verified,
                    :blocked)
@@ -27,6 +29,7 @@ module UserSerializer
       slice(
             :verified,
             :created_at,
+            :designation,
             :blocked,
             :is_active,
             :last_name,
