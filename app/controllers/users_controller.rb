@@ -41,7 +41,7 @@ class UsersController < AuthsController
          current_page_total:  data.length,
          total_pages:  data.total_pages,
          total_filtered:  data.total_entries,
-         uses: data.map{|k| k.cerialize_users_collection}  
+         users: data.map{|k| k.cerialize_users_collection}  
         } 
     end
   

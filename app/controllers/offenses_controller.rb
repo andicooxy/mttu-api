@@ -52,7 +52,7 @@ class OffensesController < AuthsController
          current_page_total:  data.length,
          total_pages:  data.total_pages,
          total_filtered:  data.total_entries,
-         offense: data.map{|k| k.cerialize_offense_collection}  
+         offenses: data.map{|k| k.cerialize_offense_collection}  
         } 
     end
   
