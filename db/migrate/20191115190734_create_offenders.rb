@@ -5,7 +5,7 @@ class CreateOffenders < ActiveRecord::Migration[5.2]
       t.string :full_name, null: false
       t.string :vehicle_no, null: false 
       t.string   :statement
-      t.string :offenses_ids
+      # t.string :offenses_ids
       t.string :driver_liences_no 
       t.string :email 
       t.string :vehicle_type 
