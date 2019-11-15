@@ -50,6 +50,6 @@ class UsersController < AuthsController
   end
 
   def data_params
-    params.require(:user).permit(:full_name, :password, :department_id,:designation, :region_id)
+    params.require(:user).permit(:full_name, :city_town, :password, :department_id,:designation, :region_id)
   end
 end
