@@ -52,7 +52,7 @@ class UsersController < AuthsController
 
   def data_params
     params.require(:user).permit(:full_name,:city_town,:email,:password, 
-                                 :registration_number,:address,:phone_number,
+                                 :registered_no,:address,:phone_number,
                                  :department_id,:designation,:region_id)
   end
 end
