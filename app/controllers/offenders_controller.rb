@@ -65,7 +65,7 @@ class OffendersController < AuthsController
                                      :vehicle_type,:date_of_issue,
                                      :address,:city_town,:number_of_poeple,
                                      :phone_number,:ambolance_needed,:injured_people,
-                                     :offense_ids,:toll_track_needed,:email,
+                                     :offense_ids,:toll_track_needed,:email,:offense_ids,
                                      :driver_liences_no,:statement)
   end
 end

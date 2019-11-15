@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_15_190734) do
+ActiveRecord::Schema.define(version: 2019_11_15_222353) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 2019_11_15_190734) do
     t.string "full_name", null: false
     t.string "vehicle_no", null: false
     t.string "statement"
-    t.string "offenses_ids"
     t.string "driver_liences_no"
     t.string "email"
     t.string "vehicle_type"
@@ -40,6 +39,13 @@ ActiveRecord::Schema.define(version: 2019_11_15_190734) do
     t.boolean "injured_people", default: false
     t.boolean "toll_track_needed", default: false
     t.index ["phone_number"], name: "index_offenders_on_phone_number"
+  end
+
+  create_table "offenders_offenses", id: false, force: :cascade do |t|
+    t.bigint "offender_id", null: false
+    t.bigint "offense_id", null: false
+    t.index ["offender_id", "offense_id"], name: "index_offenders_offenses_on_offender_id_and_offense_id"
+    t.index ["offense_id", "offender_id"], name: "index_offenders_offenses_on_offense_id_and_offender_id"
   end
 
   create_table "offenses", force: :cascade do |t|
