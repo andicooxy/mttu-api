@@ -3,7 +3,11 @@ Rails.application.routes.draw do
   resources :offenses
   resources :regions , only: [:index] 
   resources :departments , only: [:index] 
-  resources :users 
+  resources :users do 
+    collection do 
+      get "summary"
+    end
+  end
 
   post 'profile/login', to: 'generals#login'
   get 'v1/reports', to: 'generals#reports'

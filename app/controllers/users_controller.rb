@@ -8,6 +8,16 @@ class UsersController < AuthsController
     end
   end
   
+  def summary 
+    render json: {
+      offenders: Offender.count,
+      offenses: Offense.count,
+      users: User.count,
+      regions: Region.count,
+
+    }
+  end
+
   def show
     render json: existing_User
   end
