@@ -9,7 +9,7 @@ module OffenseSerializer
          description: description,
          created_by: user.cerialize_for_login,
          created_at: created_at,
-         :id
+         id: id
         }
     end
 
