@@ -8,13 +8,12 @@ class UsersController < AuthsController
     end
   end
   
-  def summary 
+  def logcount
     render json: {
-      offenders: Offender.count,
-      offenses: Offense.count,
-      users: User.count,
-      regions: Region.count,
-
+                  offenders: Offender.count,
+                  offenses: Offense.count,
+                  users: User.count,
+                  regions: Region.count
     }
   end
 

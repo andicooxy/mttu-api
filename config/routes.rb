@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :departments , only: [:index] 
   resources :users do 
     collection do 
-      get "summary"
+      get "logcount"
     end
   end
 
