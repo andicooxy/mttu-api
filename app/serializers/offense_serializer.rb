@@ -8,12 +8,13 @@ module OffenseSerializer
         {title: title,
          description: description,
          created_by: user.cerialize_for_login,
-         created_at: created_at
+         created_at: created_at,
+         :id
         }
     end
 
     def cerialize
-      slice(
+      slice(:id,
             :description,
             :created_at,
             :title)
