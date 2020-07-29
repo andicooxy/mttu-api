@@ -1,7 +1,7 @@
 # Todo API
 [![Maintainability](https://api.codeclimate.com/v1/badges/f571db91e53dc3bf63b3/maintainability)](https://codeclimate.com/github/bestwebua/todo-api/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/f571db91e53dc3bf63b3/test_coverage)](https://codeclimate.com/github/bestwebua/todo-api/test_coverage) [![Build Status](https://travis-ci.org/bestwebua/todo-api.svg?branch=feature%2Fbase_version)](https://travis-ci.org/bestwebua/todo-api)
 
-Simple Todo RESTful JSON API with documentation. Implemented with Rails 5.2
+Simple RESTful JSON API with documentation. Implemented with Rails 5.2
 
 ## Features
 1. uses basic authentication, 
