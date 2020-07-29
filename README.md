@@ -24,7 +24,6 @@ rails api:v1:docs
 
 * Ruby 2.6.5
 * Rails 5.2.1, bcrypt, jwt, active storage, acts_as_list
-* Documentation: Dox, Aglio
 * Testing: RSpec 3.8, rspec-rails 3.8.1, simplecov 0.16.1, RspecFileChef 0.1.2, factory_bot_rails, shoulda-matchers, faker, database_cleaner
 
 ## Contributing
